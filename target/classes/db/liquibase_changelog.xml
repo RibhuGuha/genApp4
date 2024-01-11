@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+		http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+		http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <property name="schemaName" value="testing"></property>
+    <property name="author=" value="db-designer"></property>
+    <changeSet id="v1-01-01" author="${author}">
+    
+ <createTable schemaName="${schemaName}" tableName="Trips">
+	<column name="TripId" type="SERIAL" autoIncrement="true" >
+        <constraints nullable="false" primaryKey="true"/>
+    </column>
+     <column name="Name" type="VARCHAR(250)" />
+    
+     <column name="Description" type="VARCHAR(250)" />
+    
+ 	
+</createTable>
+ <createTable schemaName="${schemaName}" tableName="Person">
+    <column name="UserName" type="VARCHAR(250)" >
+        <constraints nullable="false" primaryKey="true"/>
+    </column>
+     <column name="FirstName" type="VARCHAR(250)" />
+    
+     <column name="LastName" type="VARCHAR(250)" />
+    
+     <column name="Income" type="DECIMAL" />
+    
+     <column name="DateOfBirth" type="DATE" />
+    
+     <column name="MiddleName" type="VARCHAR(250)" />
+    
+     <column name="Gender" type="VARCHAR(250)" />
+    
+     <column name="Age" type="INTEGER" />
+    
+     <column name="HomeAddress" type="VARCHAR(250)" />
+    
+ 	
+</createTable>
+	
+  <createTable schemaName="${schemaName}" tableName="PersonFriends">
+	<column name="Id" type="SERIAL" autoIncrement="true">
+		<constraints primaryKey="true" nullable="false"/>
+	</column>
+	<column name="UserName" type="VARCHAR(250)" />
+	<column name="Friends" type="VARCHAR(250)" />
+</createTable>
+  <createTable schemaName="${schemaName}" tableName="PersonTrip">
+	<column name="Id" type="SERIAL" autoIncrement="true">
+		<constraints primaryKey="true" nullable="false"/>
+	</column>
+	<column name="UserName" type="VARCHAR(250)" />
+	<column name="TripId" type="INTEGER" />
+</createTable>
+
+ 
+	<addForeignKeyConstraint baseTableName="PersonFriends" baseTableSchemaName="${schemaName}"  baseColumnNames="UserName" constraintName="Person_UserName_fk"
+	                                  referencedTableName="Person" referencedTableSchemaName="${schemaName}" referencedColumnNames="UserName"/>
+	                                  
+	<addForeignKeyConstraint baseTableName="PersonFriends" baseTableSchemaName="${schemaName}"  baseColumnNames="Friends" constraintName="Friends_UserName_fk"
+	                                  referencedTableName="Person" referencedTableSchemaName="${schemaName}" referencedColumnNames="UserName"/>
+ 
+ 
+	<addForeignKeyConstraint baseTableName="PersonTrip" baseTableSchemaName="${schemaName}"  baseColumnNames="UserName" constraintName="Trips_UserName_fk"
+	                                  referencedTableName="Person" referencedTableSchemaName="${schemaName}" referencedColumnNames="UserName"/>
+	                                  
+	<addForeignKeyConstraint baseTableName="PersonTrip" baseTableSchemaName="${schemaName}"  baseColumnNames="TripId" constraintName="Trips_TripId_fk"
+	                                  referencedTableName="Trips" referencedTableSchemaName="${schemaName}" referencedColumnNames="TripId"/>
+ 
+	
+  
+<addColumn tableName="Person" schemaName="${schemaName}">
+    <column name="PersonBestFriend" type="VARCHAR(250)"/>
+</addColumn>
+
+<addForeignKeyConstraint baseTableName="Person" baseTableSchemaName="${schemaName}"  baseColumnNames="PersonBestFriend" constraintName="Person_NC_UserName_fk"
+	                                  referencedTableName="Person" referencedTableSchemaName="${schemaName}" referencedColumnNames="UserName"/>
+	    </changeSet>
+</databaseChangeLog>

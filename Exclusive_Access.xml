@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+    <edmx:DataServices>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="Transport">
+            <EntityType HasStream="false" Name="Trips">
+                <Key>
+                    <PropertyRef Name="TripId"/>
+                </Key>
+                <Property Name="TripId" Type="Edm.Int32" isUnique="false"/>
+                <Property Name="Name" Type="Edm.String" isUnique="false"/>
+                <Property Name="Description" Type="Edm.String" isUnique="false"/>
+            </EntityType>
+            <EntityType HasStream="false" Name="Person">
+                <Key>
+                    <PropertyRef Name="UserName"/>
+                </Key>
+                <Property Name="UserName" Type="Edm.String" isUnique="false"/>
+                <Property Name="FirstName" Type="Edm.String" isUnique="false"/>
+                <Property Name="LastName" Type="Edm.String" isUnique="false"/>
+                <Property Name="Income" Type="Edm.Decimal" isUnique="false"/>
+                <Property Name="DateOfBirth" Type="Edm.Date" isUnique="false"/>
+                <Property Name="MiddleName" Type="Edm.String" isUnique="false"/>
+                <Property Name="Gender" Type="Edm.String" isUnique="false"/>
+                <Property Name="Age" Type="Edm.Int32" isUnique="false"/>
+                <Property Name="HomeAddress" Type="Edm.String" isUnique="false"/>
+                <NavigationProperty Name="Friends" Type="Collection(Transport.Person)"/>
+                <NavigationProperty Name="BestFriend" Type="Transport.Person"/>
+                <NavigationProperty Name="Trip" Type="Collection(Transport.Trips)"/>
+            </EntityType>
+            <EntityContainer Name="Container">
+                <EntitySet Name="Trips" EntityType="Transport.Trips"/>
+                <EntitySet Name="Persons" EntityType="Transport.Person">
+                    <NavigationPropertyBinding Path="Friends" Target="Persons"/>
+                    <NavigationPropertyBinding Path="BestFriend" Target="Persons"/>
+                    <NavigationPropertyBinding Path="Trip" Target="Trips"/>
+                </EntitySet>
+            </EntityContainer>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

@@ -1,0 +1,1276 @@
+{
+	"info": 
+	{
+		"_postman_id": "1a33718f-0e82-4bb3-b13c-2b4aec9504d2",
+		"name": "test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7529375"
+	},
+	"item": [
+	
+	
+			        
+        
+ 	 	
+	
+	
+
+		{
+			"name": "Trips",
+			"item": [
+				{
+					"name": "Get Request",
+					"item": [
+						{
+							"name": "GET EntitySet",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/{{servletname}}/Trips",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{servletname}}",
+										"Trips"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "TripsByTripId",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/{{servletname}}/Trips(<<replace_with_keyFieldValue>>)",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{servletname}}",
+										"Trips(<<replace_with_keyFieldValue>>)"
+									]
+								}
+							},
+							"response": []
+						}
+						]
+						},
+
+		{
+					"name": "Post Request",
+					"item": [
+						{
+							"name": "POST Request",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"TripId\":87,\"Name\":\"Chaanakya Verma\",\"Description\":\"turn\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/{{servletname}}/Trips",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{servletname}}",
+										"Trips"
+									]
+								}
+							},
+							"response": []
+						}
+						]
+						},
+		{
+					"name": "Delete Request",
+					"item": [
+						{
+							"name": "Delete a Trips",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/{{servletname}}/Trips(<<replace_with_keyFieldValue>>)",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{servletname}}",
+										"Trips(<<replace_with_keyFieldValue>>)"
+									]
+								}
+							},
+							"response": []
+						}
+					    ]
+				        },
+		{
+					"name": "PATCH Request",
+					"item": [
+						{
+							"name": "Patch Request of entity",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"TripId\":87,\"Name\":\"Chaanakya Verma\",\"Description\":\"turn\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/{{servletname}}/Trips(<<replace_with_keyFieldValue>>)",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{servletname}}",
+										"Trips(<<replace_with_keyFieldValue>>)"
+									]
+								}
+							},
+							"response": []
+						}
+					    ]
+				        },
+		{
+					"name": "System Query Options 1",
+					"item": [		        
+		    
+		                    
+						{
+							"name": "GET raw value of TripId",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/{{servletname}}/Trips(<<replace_with_keyFieldValue>>)/TripId/$value",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{servletname}}",
+										"Trips(TripId)",
+										"TripId",
+										"$value"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET $filter option on a primitive field",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/{{servletname}}/Trips?$filter=TripId eq 87\n",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{servletname}}",
+										"Trips"
+									],
+									"query": [
+										{
+											"key": "$filter",
+											"value": "TripId eq 87\n"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+, 			    
+		                    
+						{
+							"name": "GET raw value of Name",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/{{servletname}}/Trips(<<replace_with_keyFieldValue>>)/Name/$value",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{servletname}}",
+										"Trips(Name)",
+										"Name",
+										"$value"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET $filter option on a primitive field",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/{{servletname}}/Trips?$filter=Name eq 'Chaanakya Verma'\n",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{servletname}}",
+										"Trips"
+									],
+									"query": [
+										{
+											"key": "$filter",
+											"value": "Name eq 'Chaanakya Verma'\n"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+, 			    
+		                    
+						{
+							"name": "GET raw value of Description",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/{{servletname}}/Trips(<<replace_with_keyFieldValue>>)/Description/$value",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{servletname}}",
+										"Trips(Description)",
+										"Description",
+										"$value"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET $filter option on a primitive field",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/{{servletname}}/Trips?$filter=Description eq 'turn'\n",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{servletname}}",
+										"Trips"
+									],
+									"query": [
+										{
+											"key": "$filter",
+											"value": "Description eq 'turn'\n"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					    ]
+				        },
+		{
+					"name": "System Query Options 4",
+					"item": [
+					   {
+							"name": "GET #orderBy option on Date field entity set",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/{{servletname}}/Trips?$orderby=<<Replace with PropName of Date Type>> desc\n",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{servletname}}",
+										"Trips"
+									],
+									"query": [
+										{
+											"key": "$orderby",
+											"value": "<<Replace with PropName of Date Type>> desc\n"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET $orderby decimal field",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/{{servletname}}/Trips?$orderby=<<Replace with PropName of Decimal Type>> desc",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{servletname}}",
+										"Trips"
+									],
+									"query": [
+										{
+											"key": "$orderby",
+											"value": "<<Replace with PropName of Decimal Type>> desc"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+	                   {
+							"name": "Get $count option on entityset",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/{{servletname}}/Trips/$count",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{servletname}}",
+										"Trips",
+										"$count"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET $top option on entityset",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/{{servletname}}/Trips?$top=2",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{servletname}}",
+										"Trips"
+									],
+									"query": [
+										{
+											"key": "$top",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET $skip option on entityset",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/{{servletname}}/Trips?$skip=2\n",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{servletname}}",
+										"Trips"
+									],
+									"query": [
+										{
+											"key": "$skip",
+											"value": "2\n"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					    ]
+				        }
+						
+ ]},     	
+	
+			        
+        
+ 	 	
+	
+	
+
+		{
+			"name": "Person",
+			"item": [
+				{
+					"name": "Get Request",
+					"item": [
+						{
+							"name": "GET EntitySet",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/{{servletname}}/Persons",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{servletname}}",
+										"Persons"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PersonByUserName",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/{{servletname}}/Persons('<<replace_with_keyFieldValue>>')",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{servletname}}",
+										"Persons('<<replace_with_keyFieldValue>>')"
+									]
+								}
+							},
+							"response": []
+						}
+						]
+						},
+
+		{
+					"name": "Post Request",
+					"item": [
+						{
+							"name": "POST Request",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"UserName\":\"damayanti.iyengar\",\"FirstName\":\"Aatmaja\",\"LastName\":\"Kakkar\",\"Income\":857740.62,\"DateOfBirth\":\"1975-02-18\",\"MiddleName\":\"Somayaji\",\"Gender\":\"found\",\"Age\":19,\"HomeAddress\":\"293 Butt Crossroad\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/{{servletname}}/Persons",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{servletname}}",
+										"Persons"
+									]
+								}
+							},
+							"response": []
+						}
+						]
+						},
+		{
+					"name": "Delete Request",
+					"item": [
+						{
+							"name": "Delete a Person",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/{{servletname}}/Persons('<<replace_with_keyFieldValue>>')",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{servletname}}",
+										"Persons('<<replace_with_keyFieldValue>>')"
+									]
+								}
+							},
+							"response": []
+						}
+					    ]
+				        },
+		{
+					"name": "PATCH Request",
+					"item": [
+						{
+							"name": "Patch Request of entity",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"UserName\":\"damayanti.iyengar\",\"FirstName\":\"Aatmaja\",\"LastName\":\"Kakkar\",\"Income\":857740.62,\"DateOfBirth\":\"1975-02-18\",\"MiddleName\":\"Somayaji\",\"Gender\":\"found\",\"Age\":19,\"HomeAddress\":\"293 Butt Crossroad\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/{{servletname}}/Persons('<<replace_with_keyFieldValue>>')",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{servletname}}",
+										"Persons('<<replace_with_keyFieldValue>>')"
+									]
+								}
+							},
+							"response": []
+						}
+					    ]
+				        },
+		{
+					"name": "System Query Options 1",
+					"item": [		        
+		    
+		                    
+						{
+							"name": "GET raw value of UserName",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/{{servletname}}/Persons('<<replace_with_keyFieldValue>>')/UserName/$value",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{servletname}}",
+										"Persons(UserName)",
+										"UserName",
+										"$value"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET $filter option on a primitive field",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/{{servletname}}/Persons?$filter=UserName eq 'damayanti.iyengar'\n",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{servletname}}",
+										"Persons"
+									],
+									"query": [
+										{
+											"key": "$filter",
+											"value": "UserName eq 'damayanti.iyengar'\n"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+, 			    
+		                    
+						{
+							"name": "GET raw value of FirstName",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/{{servletname}}/Persons('<<replace_with_keyFieldValue>>')/FirstName/$value",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{servletname}}",
+										"Persons(FirstName)",
+										"FirstName",
+										"$value"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET $filter option on a primitive field",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/{{servletname}}/Persons?$filter=FirstName eq 'Aatmaja'\n",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{servletname}}",
+										"Persons"
+									],
+									"query": [
+										{
+											"key": "$filter",
+											"value": "FirstName eq 'Aatmaja'\n"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+, 			    
+		                    
+						{
+							"name": "GET raw value of LastName",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/{{servletname}}/Persons('<<replace_with_keyFieldValue>>')/LastName/$value",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{servletname}}",
+										"Persons(LastName)",
+										"LastName",
+										"$value"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET $filter option on a primitive field",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/{{servletname}}/Persons?$filter=LastName eq 'Kakkar'\n",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{servletname}}",
+										"Persons"
+									],
+									"query": [
+										{
+											"key": "$filter",
+											"value": "LastName eq 'Kakkar'\n"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+, 			    
+		                    
+						{
+							"name": "GET raw value of Income",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/{{servletname}}/Persons('<<replace_with_keyFieldValue>>')/Income/$value",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{servletname}}",
+										"Persons(Income)",
+										"Income",
+										"$value"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET $filter option on a primitive field",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/{{servletname}}/Persons?$filter=Income eq 857740.62\n",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{servletname}}",
+										"Persons"
+									],
+									"query": [
+										{
+											"key": "$filter",
+											"value": "Income eq 857740.62\n"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+, 			    
+		                    
+						{
+							"name": "GET raw value of DateOfBirth",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/{{servletname}}/Persons('<<replace_with_keyFieldValue>>')/DateOfBirth/$value",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{servletname}}",
+										"Persons(DateOfBirth)",
+										"DateOfBirth",
+										"$value"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET $filter option on a primitive field",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/{{servletname}}/Persons?$filter=DateOfBirth eq 1975-02-18\n",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{servletname}}",
+										"Persons"
+									],
+									"query": [
+										{
+											"key": "$filter",
+											"value": "DateOfBirth eq 1975-02-18\n"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+, 			    
+		                    
+						{
+							"name": "GET raw value of MiddleName",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/{{servletname}}/Persons('<<replace_with_keyFieldValue>>')/MiddleName/$value",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{servletname}}",
+										"Persons(MiddleName)",
+										"MiddleName",
+										"$value"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET $filter option on a primitive field",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/{{servletname}}/Persons?$filter=MiddleName eq 'Somayaji'\n",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{servletname}}",
+										"Persons"
+									],
+									"query": [
+										{
+											"key": "$filter",
+											"value": "MiddleName eq 'Somayaji'\n"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+, 			    
+		                    
+						{
+							"name": "GET raw value of Gender",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/{{servletname}}/Persons('<<replace_with_keyFieldValue>>')/Gender/$value",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{servletname}}",
+										"Persons(Gender)",
+										"Gender",
+										"$value"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET $filter option on a primitive field",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/{{servletname}}/Persons?$filter=Gender eq 'found'\n",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{servletname}}",
+										"Persons"
+									],
+									"query": [
+										{
+											"key": "$filter",
+											"value": "Gender eq 'found'\n"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+, 			    
+		                    
+						{
+							"name": "GET raw value of Age",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/{{servletname}}/Persons('<<replace_with_keyFieldValue>>')/Age/$value",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{servletname}}",
+										"Persons(Age)",
+										"Age",
+										"$value"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET $filter option on a primitive field",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/{{servletname}}/Persons?$filter=Age eq 19\n",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{servletname}}",
+										"Persons"
+									],
+									"query": [
+										{
+											"key": "$filter",
+											"value": "Age eq 19\n"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+, 			    
+		                    
+						{
+							"name": "GET raw value of HomeAddress",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/{{servletname}}/Persons('<<replace_with_keyFieldValue>>')/HomeAddress/$value",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{servletname}}",
+										"Persons(HomeAddress)",
+										"HomeAddress",
+										"$value"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET $filter option on a primitive field",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/{{servletname}}/Persons?$filter=HomeAddress eq '293 Butt Crossroad'\n",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{servletname}}",
+										"Persons"
+									],
+									"query": [
+										{
+											"key": "$filter",
+											"value": "HomeAddress eq '293 Butt Crossroad'\n"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					    ]
+				        },
+		{
+					"name": "System Query Options 4",
+					"item": [
+					   {
+							"name": "GET #orderBy option on Date field entity set",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/{{servletname}}/Persons?$orderby=<<Replace with PropName of Date Type>> desc\n",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{servletname}}",
+										"Persons"
+									],
+									"query": [
+										{
+											"key": "$orderby",
+											"value": "<<Replace with PropName of Date Type>> desc\n"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET $orderby decimal field",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/{{servletname}}/Persons?$orderby=<<Replace with PropName of Decimal Type>> desc",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{servletname}}",
+										"Persons"
+									],
+									"query": [
+										{
+											"key": "$orderby",
+											"value": "<<Replace with PropName of Decimal Type>> desc"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+	                   {
+							"name": "Get $count option on entityset",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/{{servletname}}/Persons/$count",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{servletname}}",
+										"Persons",
+										"$count"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET $top option on entityset",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/{{servletname}}/Persons?$top=2",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{servletname}}",
+										"Persons"
+									],
+									"query": [
+										{
+											"key": "$top",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET $skip option on entityset",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/{{servletname}}/Persons?$skip=2\n",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{servletname}}",
+										"Persons"
+									],
+									"query": [
+										{
+											"key": "$skip",
+											"value": "2\n"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					    ]
+				        }
+						
+ ,
+		{
+					"name": "Navigation  Request",
+					"item": [
+								{
+							"name": "Navigation Request for an Entity",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/{{servletname}}/Persons('<<replace_with_keyFieldValue>>')/Friends",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{servletname}}",
+										"Persons('<<replace_with_keyFieldValue>>')",
+										"Friends"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get $expand option on Persons navigation property Friends",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/{{servletname}}/Persons('<<replace_with_keyFieldValue>>')?$expand=Friends",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{servletname}}",
+										"Persons('<<replace_with_keyFieldValue>>')"
+									],
+									"query": [
+										{
+											"key": "$expand",
+											"value": "Friends"
+										}
+									]
+								}
+							}
+							,
+							"response": []
+						}
+,  								{
+							"name": "Navigation Request for an Entity",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/{{servletname}}/Persons('<<replace_with_keyFieldValue>>')/BestFriend",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{servletname}}",
+										"Persons('<<replace_with_keyFieldValue>>')",
+										"BestFriend"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get $expand option on Persons navigation property BestFriend",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/{{servletname}}/Persons('<<replace_with_keyFieldValue>>')?$expand=BestFriend",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{servletname}}",
+										"Persons('<<replace_with_keyFieldValue>>')"
+									],
+									"query": [
+										{
+											"key": "$expand",
+											"value": "BestFriend"
+										}
+									]
+								}
+							}
+							,
+							"response": []
+						}
+,  								{
+							"name": "Navigation Request for an Entity",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/{{servletname}}/Persons('<<replace_with_keyFieldValue>>')/Trip",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{servletname}}",
+										"Persons('<<replace_with_keyFieldValue>>')",
+										"Trip"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get $expand option on Persons navigation property Trip",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/{{servletname}}/Persons('<<replace_with_keyFieldValue>>')?$expand=Trip",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{servletname}}",
+										"Persons('<<replace_with_keyFieldValue>>')"
+									],
+									"query": [
+										{
+											"key": "$expand",
+											"value": "Trip"
+										}
+									]
+								}
+							}
+							,
+							"response": []
+						}
+					    ]
+				        }
+  ,       		{
+					"name": "metadata request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{servletname}}/$metadata",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{servletname}}",
+								"$metadata"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]}
